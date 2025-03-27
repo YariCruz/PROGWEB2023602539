@@ -1,1 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Tarea Código 1</title>
+</head>
+<body>
+    <script>
+        let serieNum=[];
+        for (let i=2; i<=400; i+=2){
+         serieNum.push(i);
+        }
+        document.write("<p>Serie numérica: "+serieNum.join(", ")+"</p>");
 
+        let sum=serieNum.reduce((acumulador,num)=> acumulador+num, 0);
+        let promedio= sum/serieNum.length;
+        document.write("<p>Promedio: "+promedio+"</p>");
+
+        let mediana;
+        let mitad=Math.floor(serieNum.length/2);
+        if (serieNum.length%2===0){
+            mediana=(serieNum[mitad-1]+serieNum[mitad])/2;
+        }
+        else{
+            mediana=serieNum[mitad]
+        }
+        document.write("<p>Mediana: "+mediana+"</p>");
+        document.write("<p>Moda: No se encuentra la moda porque no existe</p>");
+
+    </script>
+</body>
+</html>
