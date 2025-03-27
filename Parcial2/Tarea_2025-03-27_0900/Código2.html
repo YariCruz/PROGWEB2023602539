@@ -1,0 +1,41 @@
+<h4>Dada la cadena "murcielago", obtener: el número de vocales, número de consonantes e
+imprimirla en idioma de la EFE</h4>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Tarea Código 2</title>
+</head>
+<body>
+    <script>
+        let cadena = "murcielago";
+        let vocales = "aeiou";
+
+        let numVocales = 0;
+        let numConsonantes = 0;
+
+        for (let letra of cadena) {
+            if (vocales.includes(letra)) {
+                numVocales++;
+            } else {
+                numConsonantes++; 
+            }
+        }
+
+        let idioma = "";
+        for (let letra of cadena) {
+            if (vocales.includes(letra)) {
+                idioma += letra + "f" + letra;
+            } else {
+                idioma += letra;
+            }
+        }
+
+        document.write("<p>Cadena: " + cadena + "</p>");
+        document.write("<p>Número de vocales: " + numVocales + "</p>");
+        document.write("<p>Número de consonantes: " + numConsonantes + "</p>");
+        document.write("<p>Cadena en idioma EFE: " + idioma + "</p>");
+    </script>
+</body>
+</html>
