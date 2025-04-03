@@ -1,0 +1,46 @@
+<!--Crear un arreglo compuesto que incluya cadenas, múmeros y
+booleanos. Recorrer el arreglo y sumar los números, concatenar 
+las cadenas y hacer AND entre los booleanos. Desplegar los 3 resultados -->
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Arreglo</title>
+    <script>
+
+    //Esta función procesa el arreglo y calcula los resultados
+function procesarArreglo() {
+    //Se define el arreglo con diferentes tipos de datos
+let arreglo = [10, "Hola", true, 5, "Mundo", false, 20, "!", true];
+
+    //Variables para almacenar los resultados
+let suma= 0; //Acumula la suma de los números
+let cadenaConcatenada = ""; //Une las cadenas
+let booleanoAND = true; //Se inicializa en true para la operación AND
+
+    //Recorrer el arreglo y realizar las operaciones según el tipo de dato
+arreglo.forEach(item => {
+if (typeof item === "number") {
+suma+= item; //Suma los números encontrados
+                } else if (typeof item === "string") {
+                    cadenaConcatenada += item + " "; //Concatena las cadenas con espacio
+                } else if (typeof item === "boolean") {
+                    booleanoAND = booleanoAND && item; //Realiza la operación AND entre booleanos
+                }
+            });
+
+ //Resultados en la página
+document.getElementById("resultadoNumeros").textContent = "Suma: " + suma;
+document.getElementById("resultadoCadenas").textContent = "Cadenas concatenadas: " + cadenaConcatenada;
+document.getElementById("resultadoBooleanos").textContent = "AND entre los Booleanos: " + booleanoAND;
+        }
+    </script>
+</head>
+<body onload="procesarArreglo()">
+    <h2>Arreglo Variado</h2>
+    <!-- Resultados de las operaciones -->
+    <p id="resultadoNumeros"></p>
+    <p id="resultadoCadenas"></p>
+    <p id="resultadoBooleanos"></p>
+</body>
+</html>

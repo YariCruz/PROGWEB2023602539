@@ -1,1 +1,40 @@
 
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Meses</title>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+    </style>
+    <script>
+        //lista
+ function mostrarMeses() {
+    let meses = [
+      "1º - Enero", "2º - Febrero", "3º - Marzo",
+      "4º - Abril", "5º - Mayo", "6º - Junio",
+      "7º - Julio", "8º - Agosto", "9º - Septiembre",
+      "10º - Octubre", "11º - Noviembre", "12º - Diciembre"
+            ];
+  // Obtener la lista del HTML donde se mostrarán los meses
+let lista = document.getElementById("listaMeses");
+
+// Recorrer el arreglo y agregar cada mes como un elemento de la lista
+meses.forEach(mes => {
+ let item = document.createElement("li"); // Crear un elemento de lista
+ item.textContent = mes; //Asignar el texto del mes con su ordinal
+lista.appendChild(item); //Agregarlo a la lista en el HTML
+            });
+        }
+    </script>
+</head>
+<body onload="mostrarMeses()">
+    <h2>Meses del Año</h2>
+    <!-- meses -->
+    <ul id="listaMeses"></ul>
+</body>
+</html>
+
