@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Teclas</title>
+  
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: repeat(9, 60px);
+      grid-template-rows: repeat(3, 60px);
+      justify-content: start;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .box {
+      width: 60px;
+      height: 60px;
+      background-color: lightgray;
+      border: 1px solid black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      transition: background-color 0.3s;
+    }
+
+    .box:hover {
+      background-color: pink;
+    }
+
+    .w { grid-column: 3; grid-row: 1; }
+
+    .a { grid-column: 2; grid-row: 2; }
+    .s { grid-column: 3; grid-row: 2; }
+    .d { grid-column: 4; grid-row: 2; }
+
+    .z { grid-column: 6; grid-row: 2; }
+    .x { grid-column: 7; grid-row: 2; }
+  </style>
+</head>
+<body>
+  <h2>Tarea 5</h2>
+  <div class="container">
+    <div class="box w">W</div>
+    <div class="box a">A</div>
+    <div class="box s">S</div>
+    <div class="box d">D</div>
+    <div class="box z">Z</div>
+    <div class="box x">X</div>
+  </div>
+
+  <script>
+    const boxes = {
+      w: document.querySelector('.w'),
+      a: document.querySelector('.a'),
+      s: document.querySelector('.s'),
+      d: document.querySelector('.d'),
+      z: document.querySelector('.z'),
+      x: document.querySelector('.x')
+    };
+
+    const keydownColor = 'lightblue';
+    const defaultColor = 'lightgray';
+
+    // presion de tecla
+    document.addEventListener('keydown', (event) => {
+      const key = event.key.toLowerCase();
+      if (boxes[key]) {
+        boxes[key].style.backgroundColor = keydownColor;
+      }
+    });
+
+    //soltar una tecla
+    document.addEventListener('keyup', (event) => {
+      const key = event.key.toLowerCase();
+      if (boxes[key]) {
+        boxes[key].style.backgroundColor = defaultColor;
+      }
+    });
+  </script>
+</body>
+</html>
+
 
